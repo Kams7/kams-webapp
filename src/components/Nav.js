@@ -1,18 +1,19 @@
 function Nav() {
     const styles = {
-        color: 'grey',
-        backgroundColor: 'lightgreen',
-        padding: '40px',
-        paddingInline: '10px'
+        color: 'white',
+        display: 'flex',
+        justifyContent: 'space-around',
+        listStyle:'none'
     }
     return (
-        <nav className="main-nav">
-            <div className='nav-bar' style={styles}>
-                <span>Profile</span>
-                <span>Projects</span>
-                <span>Contact</span>
-                <span>Connect</span>
-            </div>
+        <nav style={{background:'teal', padding:'1rem'}}>
+            <ul className='nav-bar' style={styles}>
+                <img src='' alt='logo'></img>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/Projects">Projects and Blog</a></li>
+                <li><a href="/about">Contact</a></li>
+                <li><a href="/connect">Connect</a></li>
+            </ul>
         </nav>
     );
 };
