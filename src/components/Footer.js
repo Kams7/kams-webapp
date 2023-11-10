@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer style={{display:'flex', justifyContent:'space-around', padding:'2rem', background:'rgb(20,20,20,0.5)'}}>
+        <footer style={{display:'flex', justifyContent:'space-around', padding:'5rem', background:'#17252A'}}>
             <div>
             <img src='' alt='logo'></img>
             </div>

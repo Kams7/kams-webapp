@@ -1,37 +1,48 @@
 import {useState, useEffect} from 'react'
 
-function Nav() {
+function Body() {
 
-    const [transparency, setTransparency] = useState(0.7)
-    const styles = {
+    const [transparency, setTransparency] = useState(1)
+    const bodyStyles = {
         color: 'white',
-        backgroundColor: `rgb(150,175,5,${transparency})`,
-        padding: '400px',
+        // backgroundColor: `#3AAFA9`,
+        backgroundColor: `rgb(58,175,169,${transparency})`,
+        padding: '50px',
+        height: '700px',
     }
 
     useEffect(() => {
         const interval = setInterval(() => {
             setTransparency((prevTransparency) => {
-                if (prevTransparency<=0.7){
-                    return 0.7
+                if (prevTransparency>=1){
+                    return 1
                 } else {
-                    return prevTransparency - 0.02
+                    return prevTransparency + 0.02
                 }
             });
-        }, 100)
+        }, 70)
 
         return () => clearInterval(interval);
       }, []);
 
     const adjustColor = (e) => {
-        setTransparency(transparency+0.02)
+        setTransparency((transparency)=>{
+            if (transparency<0.3){return 0.3} else{return transparency-0.02}})
+        console.log(transparency)
     }
 
     return (
-        <div className="main-body" style={styles} onWheel={adjustColor}>
-            Hi all!
-        </div>
+        <main className="main-body" style={bodyStyles} onWheel={adjustColor}>
+            <section>
+                <article>
+                    Hi
+                </article>
+                <article>
+                    Bye
+                </article>
+            </section>
+        </main>
     );
 };
 
-export default Nav;
+export default Body;
